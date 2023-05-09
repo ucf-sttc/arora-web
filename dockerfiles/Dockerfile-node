@@ -1,9 +1,5 @@
 FROM ghcr.io/armando-fandango/ez/ez:0.4-base-bullseye-slim
 
-# TODO: Move it to base
-RUN groupadd --gid 1000 ezdev \
-  && useradd --uid 1000 --gid ezdev --shell /bin/bash --create-home ezdev
-
 ENV NODE_VERSION 20.1.0
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
