@@ -1,0 +1,27 @@
+# DUID="$(id -u)" DGID="$(id -g)" docker compose
+# DUID="$(id -u)" DGID="$(id -g)" docker compose run --service-ports --rm node
+
+x-volumes: &volumes
+  - ..:/workspaces
+
+x-service-runtime: &service-runtime
+  user: ${DUID}:${DGID}
+  group_add:
+    - sudo
+    - "${DGID}"
+  environment:
+    - DISPLAY
+  volumes: *volumes
+  working_dir: ${PWD}
+
+services:
+  node:
+    <<: [*service-runtime]
+    image: ghcr.io/armando-fandango/ez/ez:0.4-node20-bullseye-slim
+    container_name: node-test
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    ports:
+      - "3000:3000"
+    build: 
+      context: .
+      dockerfile: dockerfiles/Dockerfile-node
