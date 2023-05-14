@@ -20,7 +20,7 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	//"forwardPorts": [3000],
 
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
 	// "runServices": [],
@@ -36,7 +36,11 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"GitHub.copilot"
+				"GitHub.copilot",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode",
+				"dotenv.dotenv-vscode",
+				"redhat.vscode-yaml"
 			]
 		}
 	},
