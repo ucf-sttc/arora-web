@@ -1,19 +1,14 @@
 # docker compose run --service-ports --rm node
 
-x-volumes: &volumes
-  - $HOME/workspaces:/home/ezdev/workspaces
-
-x-service-runtime: &service-runtime
-  volumes: *volumes
-  working_dir: ${PWD}
-
 services:
-  node:
-    <<: [*service-runtime]
-    image: ghcr.io/armando-fandango/ez/ez:0.4-node20-bullseye-slim
+  arora-web-dev:
+    image: ghcr.io/armando-fandango/ez/ez:0.4-base-bullseye-slim
     command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+      - ${PWD}:/arora-web
     ports:
       - "3000"
-    build: 
-      context: .
-      dockerfile: dockerfiles/Dockerfile-node
+    working_dir: /arora-web
+    #build: 
+    #  context: .
+    #  dockerfile: dockerfiles/Dockerfile-node

@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-	"name": "arora-web",
+	"name": "arora-web-dev",
 	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
@@ -10,11 +10,11 @@
 	],
 	// The 'service' property is the name of the service for the container that VS Code should
 	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
-	"service": "node",
+	"service": "arora-web-dev",
 
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/home/ezdev/workspaces/${localWorkspaceFolderBasename}",
+	"workspaceFolder": "/arora-web",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -23,7 +23,7 @@
 	//"forwardPorts": [3000],
 
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
-	// "runServices": [],
+	"runServices": ["arora-web-dev"],
 
 	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
 	// "shutdownAction": "none",
@@ -40,8 +40,25 @@
 				"dbaeumer.vscode-eslint",
 				"esbenp.prettier-vscode",
 				"dotenv.dotenv-vscode",
-				"redhat.vscode-yaml"
-			]
+				"redhat.vscode-yaml",
+				"GitHub.vscode-pull-request-github",
+				"github.vscode-github-actions"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"prettier.trailingComma": "es5",
+				"prettier.requireConfig": false,
+				"prettier.singleQuote": true,
+				"prettier.useTabs": true,
+				"prettier.tabWidth": 2,
+				"prettier.printWidth": 80,
+				"editor.tabSize": 2,
+				"editor.codeActionsOnSave": [
+					"source.formatDocument",
+					"source.fixAll.eslint"
+				]
+			}
 		}
 	},
 

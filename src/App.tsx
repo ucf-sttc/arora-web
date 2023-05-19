@@ -1,27 +1,24 @@
-//import React from 'react';
-//import logo from './logo.svg';
+// import React from 'react';
+// import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      <Navbar />
-        <p>
-          Welcome to ARORA Sim
-        </p>
-        <a
-          className="App-link"
-          href="https://arorasim.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          arorasim.ai
-        </a>
-      </header>
-    </div>
-  );
+function App(): JSX.Element {
+	return (
+		<>
+			<Navbar />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/contact" element={<Contact />} />
+			</Routes>
+		</>
+	);
 }
 
 export default App;
