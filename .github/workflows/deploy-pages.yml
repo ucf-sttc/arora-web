@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/armando-fandango/ez/ez:0.4-base-bullseye-slim
-      options: --cpus 1
+      options: --cpus 1 --user 1001
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
