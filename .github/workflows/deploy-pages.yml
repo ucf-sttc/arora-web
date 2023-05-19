@@ -23,7 +23,9 @@ jobs:
           restore-keys: npm-
       - name: install dependencies
         run: npm ci --ignore-scripts
-      - name: deploy to github pages
+      - name: build
+        run: npm run build
+      - name: deploy to gh-pages branch
         # run: npm run deploy
         if: ${{ github.event_name != 'pull_request' }}
         uses: peaceiris/actions-gh-pages@v3
