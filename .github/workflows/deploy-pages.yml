@@ -1,0 +1,20 @@
+name: "deploy-pages"
+
+on:
+  push:
+    branches: [ "ts" ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ "ts" ]
+
+jobs:
+  deploy-to-gh-pages:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/armando-fandango/ez/ez:0.4-base-bullseye-slim
+      options: --cpus 1
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: deploy to github pages
+        run: npm run deploy
