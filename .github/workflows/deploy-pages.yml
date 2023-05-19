@@ -1,10 +1,10 @@
-name: "deploy-pages"
+name: 'deploy-pages'
 
 on:
   push:
-    branches: [ "ts" ]
-  pull_request:
-    branches: [ "ts" ]
+    branches: ['ts']
+  #pull_request:
+  #  branches: [ "ts" ]
 
 jobs:
   deploy-to-gh-pages:
@@ -24,4 +24,9 @@ jobs:
       - name: install dependencies
         run: npm ci --ignore-scripts
       - name: deploy to github pages
-        run: npm run deploy
+        # run: npm run deploy
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build
