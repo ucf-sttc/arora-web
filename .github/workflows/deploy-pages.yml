@@ -4,7 +4,6 @@ on:
   push:
     branches: [ "ts" ]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ "ts" ]
 
 jobs:
@@ -16,5 +15,13 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
+      - name: cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: npm-
+      - name: install dependencies
+        run: npm ci --ignore-scripts
       - name: deploy to github pages
         run: npm run deploy
