@@ -2,7 +2,7 @@
 
 services:
   arora-web-dev:
-    image: ghcr.io/armando-fandango/ez/ez:0.4-base-bullseye-slim
+    image: ghcr.io/armando-fandango/ezdev/ezdev:0.4-base-bullseye-slim
     command: /bin/sh -c "while sleep 1000; do :; done"
     volumes:
       - ${PWD}:/arora-web

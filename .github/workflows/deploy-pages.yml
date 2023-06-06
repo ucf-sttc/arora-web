@@ -3,30 +3,35 @@ name: 'deploy-pages'
 on:
   push:
     branches: ['ts']
-  #pull_request:
+  # pull_request:
   #  branches: [ "ts" ]
 
 jobs:
   deploy-to-gh-pages:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/armando-fandango/ez/ez:0.4-base-bullseye-slim
+      image: ghcr.io/armando-fandango/ezdev/ezdev:0.4-base-bullseye-slim
       options: --cpus 1 --user 1001
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
       - name: cache dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
+        id: yarn-cache
         with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-
+          path: ~/.cache/yarn/v6
+          # path: ~/.npm
+          key: yarn-${{ hashFiles('yarn.lock') }}
+          # key: npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: yarn-
+          # restore-keys: npm-
       - name: install dependencies
-        run: npm ci --ignore-scripts
+        #run: npm ci --ignore-scripts
+        run: yarn install --immutable --immutable-cache
       - name: build
-        run: npm run build
+        #run: npm run build
+        run: yarn build
       - name: deploy to gh-pages branch
-        # run: npm run deploy
         if: ${{ github.event_name != 'pull_request' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
