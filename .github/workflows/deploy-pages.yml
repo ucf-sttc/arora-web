@@ -2,7 +2,7 @@ name: 'deploy-pages'
 
 on:
   push:
-    branches: ['ts']
+    branches: ['ts-next']
   # pull_request:
   #  branches: [ "ts" ]
 
@@ -15,25 +15,27 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
-      - name: cache dependencies
-        uses: actions/cache@v3
-        id: yarn-cache
-        with:
-          path: ~/.cache/yarn/v6
+#      - name: cache dependencies
+#        uses: actions/cache@v3
+#        id: yarn-cache
+#        with:
+#          path: ~/.cache/yarn/v6
           # path: ~/.npm
-          key: yarn-${{ hashFiles('yarn.lock') }}
+#          key: yarn-${{ hashFiles('yarn.lock') }}
           # key: npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: yarn-
+#          restore-keys: yarn-
           # restore-keys: npm-
       - name: install dependencies
         #run: npm ci --ignore-scripts
-        run: yarn install --immutable --immutable-cache
+        #run: yarn install --immutable --immutable-cache
+        run: pnpm install --frozen-lockfile
       - name: build
         #run: npm run build
-        run: yarn build
+        #run: yarn build
+        run: pnpm build
       - name: deploy to gh-pages branch
         if: ${{ github.event_name != 'pull_request' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build
+          publish_dir: out
