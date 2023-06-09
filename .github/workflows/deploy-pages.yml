@@ -28,7 +28,7 @@ jobs:
       - name: install dependencies
         #run: npm ci --ignore-scripts
         #run: yarn install --immutable --immutable-cache
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: build
         #run: npm run build
         #run: yarn build
