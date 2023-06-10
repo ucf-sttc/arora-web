@@ -11,4 +11,3 @@ Built using:
 * VSCode as IDE
 * Custom Devcontainer for development environment
 * ESLint and Prettify for code linting and formatting
-
