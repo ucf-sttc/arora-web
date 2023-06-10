@@ -4,8 +4,8 @@ export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-start p-8">
 			<Image
-				src="/images/arora_logo.png"
-				width={600}
+				src="/images/home_splash.png"
+				width={1000}
 				height={100}
 				alt="ARORA Sim"
 			/>
