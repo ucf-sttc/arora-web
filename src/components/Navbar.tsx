@@ -16,8 +16,7 @@ const Navbar = () => {
 			<NavLink to="/contact">Contact</NavLink>
 		</nav>
 */
-
-		<nav className="w-full bg-gray-900 shadow ">
+		<nav className="w-ful ">
 			<div className="justify-between mx-auto lg:max-w-6xl md:items-center md:flex md:px-2">
 				<div>
 					<div className="flex items-center justify-start md:py-1 md:block">
@@ -81,7 +80,7 @@ const Navbar = () => {
 								<Link href="/start">Get Started</Link>
 							</li>
 							<li className="text-white">
-								<Link href="/about">About</Link>
+								<Link href="/about">Features</Link>
 							</li>
 							<li className="text-white">
 								<Link href="/contact">Contact</Link>

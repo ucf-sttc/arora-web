@@ -3,6 +3,14 @@ import Image from 'next/image';
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center justify-start">
+			<div className="flex w-full justify-center items-center ">
+				<Image
+					src="/images/arora_logo.png"
+					width={500}
+					height={100}
+					alt="ARORA Sim"
+				/>
+			</div>
 			<div className="flex flex-col max-w-5xl">
 				<div className="flex flex-wrap mb-4">
 					<div className="flex flex-col w-1/2">
@@ -40,10 +48,10 @@ export default function Home() {
 					<h2 className="mb-4 mt-4 font-bold text-yellow-400">Video</h2>
 					<div className="flex flex-col items-center">
 						<iframe
-							width="800"
-							height="315"
-							src="https://www.youtube.com/embed/3T0EErlVOLE"
-							title="YouTube video player"
+							width="514px"
+							height="289px"
+							src="https://www.youtube.com/embed/3T0EErlVOLE?rel=0"
+							title="Introducing ARORA Video"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						></iframe>
 					</div>
@@ -52,15 +60,29 @@ export default function Home() {
 					<h2 className="mb-4 mt-4 font-bold text-yellow-400">Publications</h2>
 					<ul className="ml-4 mb-2 mt-2 list-disc">
 						<li>
-							Comparing Physics Effects through Reinforcement Learningin the
-							ARORA Simulator, by Troyle Thomas, Armando Fandango, Dean Reed,
-							Clive Hoayun, Jonathan Hurter, Alexander Gutierrez, and Keith
-							Brawner, at EMSS 21
+							<a
+								className=" text-blue-600 dark:text-blue-500 hover:underline"
+								href="https://www.cal-tek.eu/proceedings/i3m/2021/emss/015/pdf.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								Comparing Physics Effects through Reinforcement Learningin the
+								ARORA Simulator
+							</a>, by Troyle Thomas, Armando Fandango, Dean Reed,
+								Clive Hoayun, Jonathan Hurter, Alexander Gutierrez, and Keith
+								Brawner, at EMSS 21
 						</li>
 						<li>
-							ARORA & NavSim: a simulator system for training autonomous agents
-							with geospecific data, by Armando Fandango, Alexander Gutierrez,
-							Clive Hoayun, Jonathan Hurter, Dean Reed, at SPIE 22
+							<a
+								className=" text-blue-600 dark:text-blue-500 hover:underline"
+								href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12276/122760C/ARORA--NavSim--a-simulator-system-for-training-autonomous/10.1117/12.2647733.short"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								ARORA & NavSim: a simulator system for training autonomous
+								agents with geospecific data
+							</a>, by Armando Fandango, Alexander
+								Gutierrez, Clive Hoayun, Jonathan Hurter, Dean Reed, at SPIE 22
 						</li>
 					</ul>
 				</div>

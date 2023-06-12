@@ -2,7 +2,9 @@
 import Image from 'next/image';
 const StartPage = () => {
 	return (
+
 		<main className="flex flex-col items-center justify-start">
+
 			<div className="flex flex-col max-w-5xl">
 				<div className="flex flex-wrap mb-4">
 					<div className="flex flex-col w-1/2">
@@ -18,7 +20,7 @@ const StartPage = () => {
 							ARORA comes with a python based framework to train reinforcement
 							learnign agents. You can use navsim from the repository below. The
 							documentation for navsim is provided at the following link:{' '}
-							<a
+							<a className=" text-blue-600 dark:text-blue-500 hover:underline"
 								href="https://docs.navsim.ai"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -40,8 +42,7 @@ const StartPage = () => {
 					<h2 className="mb-4 mt-4 font-bold text-yellow-400">Repositories</h2>
 					<ul className="ml-4 mb-2 mt-2 list-disc">
 						<li>
-							ARORA:{' '}
-							<a
+							<a className=" text-blue-600 dark:text-blue-500 hover:underline"
 								href="https://github.com/ucf-sttc/ARORA"
 								target="_blank"
 								rel="noopener noreferrer"
@@ -50,8 +51,7 @@ const StartPage = () => {
 							</a>
 						</li>
 						<li>
-							navsim:{' '}
-							<a
+							<a className=" text-blue-600 dark:text-blue-500 hover:underline"
 								href="https://github.com/ucf-sttc/navsim"
 								target="_blank"
 								rel="noopener noreferrer"
