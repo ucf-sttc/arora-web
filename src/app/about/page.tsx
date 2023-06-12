@@ -4,9 +4,9 @@ import Image from 'next/image';
 
 const AboutPage = () => {
 	return (
-		<main className="flex min-h-screen flex-col p-8 content-center justify-between mx-auto lg:max-w-7xl">
-			<div className="grid grid-cols-3 gap-4 place-content-stretch ">
-				<div className="ml-5 mr-5 justify-center items-center">
+		<main className="flex flex-col items-center justify-start">
+			<div className="flex max-w-5xl">
+				<div className="w-1/2 px-4 justify-center items-center">
 					<p className="mb-2 mt-2">
 						ARORA stands for A Realistic Open environment for Rapid Agent
 						training. ARORA is a geospecific simulator for training agents using
@@ -25,7 +25,7 @@ const AboutPage = () => {
 					</p>
 					
 				</div>
-				<div className="flex justify-center items-center">
+				<div className="w-1/4 px-4 justify-center items-center">
 					<Image
 						src="/images/about_arora_1.png"
 						width={300}
@@ -33,7 +33,7 @@ const AboutPage = () => {
 						alt="ARORA Sim"
 					/>
 				</div>
-				<div className="flex justify-center items-center">
+				<div className="w-1/4 px-4 justify-center items-center">
 					<Image
 						src="/images/about_arora_2.png"
 						width={300}

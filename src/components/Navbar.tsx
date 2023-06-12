@@ -17,8 +17,8 @@ const Navbar = () => {
 		</nav>
 */
 
-		<nav className="w-full bg-gray-900 shadow">
-			<div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex md:px-2">
+		<nav className="w-full bg-gray-900 shadow ">
+			<div className="justify-between mx-auto lg:max-w-6xl md:items-center md:flex md:px-2">
 				<div>
 					<div className="flex items-center justify-start md:py-1 md:block">
 						<Link href="#">
@@ -76,6 +76,9 @@ const Navbar = () => {
 						<ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
 							<li className="text-white">
 								<Link href="/">Home</Link>
+							</li>
+							<li className="text-white">
+								<Link href="/start">Get Started</Link>
 							</li>
 							<li className="text-white">
 								<Link href="/about">About</Link>
