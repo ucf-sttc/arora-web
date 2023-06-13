@@ -3,7 +3,9 @@ import Image from 'next/image';
 export default function Home() {
 	return (
 		<main className="flex flex-col items-center justify-start">
-			<div className="flex w-full justify-center items-center ">
+
+			<div className="flex flex-col max-w-5xl">
+			<div className="flex justify-center items-center ">
 				<Image
 					src="/images/arora_logo.png"
 					width={500}
@@ -11,9 +13,8 @@ export default function Home() {
 					alt="ARORA Sim"
 				/>
 			</div>
-			<div className="flex flex-col max-w-5xl">
-				<div className="flex flex-wrap mb-4">
-					<div className="flex flex-col w-1/2">
+				<div className="flex flex-row flex-wrap">
+					<div className="flex flex-col w-1/2 flex-shrink-0">
 						<h2 className="mb-4 mt-4 font-bold text-yellow-400">
 							Introduction
 						</h2>
@@ -34,7 +35,7 @@ export default function Home() {
 							interface (API) with several sensors.
 						</p>
 					</div>
-					<div className="flex flex-col w-1/2 justify-center px-4">
+					<div className="flex flex-col w-1/2 items-center justify-center px-4 flex-shrink-0">
 						<Image
 							src="/images/home_splash.png"
 							width={800}
@@ -46,7 +47,7 @@ export default function Home() {
 
 				<div>
 					<h2 className="mb-4 mt-4 font-bold text-yellow-400">Video</h2>
-					<div className="flex flex-col items-center">
+					<div className="flex justify-center items-center">
 						<iframe
 							width="514px"
 							height="289px"
@@ -66,7 +67,7 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								Comparing Physics Effects through Reinforcement Learningin the
+								Comparing Physics Effects through Reinforcement Learning in the
 								ARORA Simulator
 							</a>, by Troyle Thomas, Armando Fandango, Dean Reed,
 								Clive Hoayun, Jonathan Hurter, Alexander Gutierrez, and Keith
