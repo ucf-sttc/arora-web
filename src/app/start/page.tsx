@@ -43,7 +43,7 @@ const StartPage = () => {
 						</h2>
 						<p className="mb-2 mt-2 text-justify">
 							ARORA comes with a python based framework to train reinforcement
-							learnign agents. You can download navsim from the following link:
+							learning based AI agents. You can download navsim from the following link:
 							<a
 								className=" text-blue-600 dark:text-blue-500 hover:underline"
 								href="https://github.com/ucf-sttc/navsim"
